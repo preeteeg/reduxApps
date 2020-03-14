@@ -66,3 +66,14 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+### npm install react-redux redux
+### setup Store by importing createStore method from redux
+### initialise store by using createStore method
+### createStore method take reducer function and defaultState as arguments
+### set up defaulState i.e initial state
+### create reducer function which takes 2 args, which is the defaultState and the action and return the state
+### dispatch method - send actions to the store
+### actions (objects) ->action{ type : WHAT KIND OF ACTION , payload : DATA }
+### redux is uni directional flow and does not mutate state ..makes a copy 
