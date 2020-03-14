@@ -2,12 +2,13 @@ import React from 'react';
 import Counter from './components/Counter'
 import store from './store/store'
 import './App.css';
-
+import {Provider} from 'react-redux'
 function App() {
   return (
-    <div className="App">
-       <Counter state={store.getState()} />
-    </div>
+       <Provider store={store}>
+        <Counter  />
+      </Provider>
+     
   );
 }
 

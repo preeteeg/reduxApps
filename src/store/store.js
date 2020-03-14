@@ -1,21 +1,15 @@
 
+
 import { createStore } from 'redux'
+import { INCREASE, DECREASE, RESET } from './actions'
+import reducer from './reducers'
 
-
-const initialState = {
-    count:10
-}
-
-// a reducer is responsible to update the state and expect the action
-function reducer(state=initialState,action)
-{
-    console.log(state, action)
-    
-    return state
-}
 
 //createStore will look for reducer function to update the state
 const store = createStore(reducer)
-//
+//dispatch
+store.dispatch({ type: DECREASE })
+store.dispatch({ type: RESET })
+store.dispatch({ type: INCREASE})
 console.log(store.getState())
 export default store
