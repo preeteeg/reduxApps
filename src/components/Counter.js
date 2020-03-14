@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {connect} from  'react-redux'
-import { INCREASE, DECREASE,RESET } from '../store/actions'
+import { INCREASE, DECREASE,RESET,MODAL_OPEN,MODAL_CLOSE } from '../store/actions'
 const Counter = (props) =>
 {
    
@@ -8,8 +8,8 @@ const Counter = (props) =>
     //use Hook :useState
     //const [counter, setCounter] = useState(0)
 
-   // const count = (props.state.count)
-   // const count = props.count
+    // const count = (props.state.count)
+    // const count = props.count
     //const{count,name,dispatch} =props
     const { count, name, increase, decrease, reset } = props
 
@@ -27,9 +27,9 @@ const Counter = (props) =>
 }
 
 
-function mapStateToProps(state)
+function mapStateToProps({countState:{count,name}})
 {
-    return { count:state.count,name:state.name}
+    return { count:count,name:name}
 }
 
 function mapDispatchToProps(dispatch, ownProps)

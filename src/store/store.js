@@ -1,15 +1,22 @@
 
 
-import { createStore } from 'redux'
-import { INCREASE, DECREASE, RESET } from './actions'
-import reducer from './reducers'
-
+import { createStore,applyMiddleware,combineReducers } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension';
+import countReducer from '../reducers/countReducer'
+import modalReducer from '../reducers/modalReducer'
+import productsReducer from '../reducers/productsReducer'
 
 //createStore will look for reducer function to update the state
-const store = createStore(reducer)
+const store = createStore(
+    combineReducers({
+        countState: countReducer,
+        modalState: modalReducer,
+        productsState:productsReducer
+    }),
+     composeWithDevTools()
+    //window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 //dispatch
-store.dispatch({ type: DECREASE })
-store.dispatch({ type: RESET })
-store.dispatch({ type: INCREASE})
+
 console.log(store.getState())
 export default store

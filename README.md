@@ -81,3 +81,8 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### place reducer function (pure function) in a separate file and import actions
 ### import actions and reducer function in store file
 ### provider -  connect from react-redux
+### Provider store props
+### connect HOC 4 arguments
+### first argument mapStateToProps (state) //return an object which represent the state 
+### second argument mapDispatchToProps (dispatch,ownProps) // return an object with invoking
+### install redux-devtools-extension https://github.com/zalmoxisus/redux-devtools-extension
