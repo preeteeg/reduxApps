@@ -19,7 +19,9 @@ const Modal = ({ isOpen, name, text ,closeModal}) =>
 }
 
 Modal.propTypes = {
-
+    isOpen: PropTypes.bool.isRequired,
+    text: PropTypes.string.isRequired,
+    close:PropTypes.func.isRequired,
 }
 
 function mapStateToProps({ modalState: { isOpen,name, text } })
@@ -34,7 +36,13 @@ function mapStateToProps({ modalState: { isOpen,name, text } })
 function mapDispatchToProps(dispatch, ownProps)
 {
     return {
-        closeModal: ()=>dispatch({ type: MODAL_CLOSE})
+        closeModal: () => dispatch({
+            type: MODAL_CLOSE,
+            payload: {
+                isOpen:false,
+                name: "",
+                text:""
+        }})
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Modal)

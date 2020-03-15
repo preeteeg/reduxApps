@@ -39,7 +39,14 @@ function mapDispatchToProps(dispatch, ownProps)
         increase: () => dispatch({ type: INCREASE }),
         decrease: () => dispatch({ type: DECREASE }),
         reset: () => dispatch({ type: RESET }),
-        openModal: () => dispatch({ type: MODAL_OPEN }),
+        openModal: () => dispatch({
+            type: MODAL_OPEN,
+            payload: {
+                isOpen:true,
+                name: "Am a modal",
+                text:"Counter has been reset"
+        }
+        }),
         
     }
 }
