@@ -3,7 +3,8 @@ import { MODAL_OPEN, MODAL_CLOSE } from '../store/actions'
 
 const initialState = {
     isOpen: false,
-    text:"Bla bla"
+    name:"Am a modal",
+    text:"Counter has been reset"
 }
 
 export default function modalReducer(state = initialState, action)

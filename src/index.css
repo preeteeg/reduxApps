@@ -147,10 +147,18 @@ Modal
   text-transform: capitalize;
   padding: 4rem 2rem;
   transition: all 0s ease-in-out;
+  position: relative;
 }
+.modal-container .btn-close{
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+/*
 .modal-container p {
   margin-bottom: 5rem;
-}
+}*/
 .modal-overlay.isModalOpen .modal-container {
   margin-top: 6rem;
 }

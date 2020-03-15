@@ -86,3 +86,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### first argument mapStateToProps (state) //return an object which represent the state 
 ### second argument mapDispatchToProps (dispatch,ownProps) // return an object with invoking
 ### install redux-devtools-extension https://github.com/zalmoxisus/redux-devtools-extension
+### To use multiple reducer , use combineReducers from redux in createStore function
+### combineReducers takes an object of different part of the state e.g combineReducers ({countState:countReducers,modalState:modalReducers,productsState:productsReducers})
+### Each component will make use of it's part of the state in mapsStateToProps instead of the whole state

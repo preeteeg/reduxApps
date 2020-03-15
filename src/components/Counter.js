@@ -11,7 +11,7 @@ const Counter = (props) =>
     // const count = (props.state.count)
     // const count = props.count
     //const{count,name,dispatch} =props
-    const { count, name, increase, decrease, reset } = props
+    const { count, name, increase, decrease, reset ,openModal} = props
 
     return (
         <div className="container">
@@ -19,7 +19,7 @@ const Counter = (props) =>
             <p className="counter">{count}</p> 
             <div className="buttons">
                 <button type="button" className="btn" onClick={increase}>Increment</button>
-                <button type="button" className="btn" onClick={reset}>Reset</button>
+                <button type="button" className="btn" onClick={reset,openModal}>Reset</button>
                 <button type="button" className="btn" onClick={decrease}>Decrement</button>
             </div>
         </div>
@@ -39,6 +39,8 @@ function mapDispatchToProps(dispatch, ownProps)
         increase: () => dispatch({ type: INCREASE }),
         decrease: () => dispatch({ type: DECREASE }),
         reset: () => dispatch({ type: RESET }),
+        openModal: () => dispatch({ type: MODAL_OPEN }),
+        
     }
 }
 
