@@ -89,3 +89,5 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 ### To use multiple reducer , use combineReducers from redux in createStore function
 ### combineReducers takes an object of different part of the state e.g combineReducers ({countState:countReducers,modalState:modalReducers,productsState:productsReducers})
 ### Each component will make use of it's part of the state in mapsStateToProps instead of the whole state
+### set up actioncreators to return dispatch object
+### redux does not asyn action, so we need to handle ajax using redux-thunk third party npm install --save redux-thunk

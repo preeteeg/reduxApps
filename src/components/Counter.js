@@ -1,6 +1,6 @@
 import React,{useState} from 'react'
 import {connect} from  'react-redux'
-import { INCREASE, DECREASE,RESET,MODAL_OPEN,MODAL_CLOSE } from '../store/actions'
+import { increase, decrease,reset,openModal } from '../store/actions'
 const Counter = (props) =>
 {
    
@@ -19,7 +19,7 @@ const Counter = (props) =>
             <p className="counter">{count}</p> 
             <div className="buttons">
                 <button type="button" className="btn" onClick={increase}>Increment</button>
-                <button type="button" className="btn" onClick={reset,openModal}>Reset</button>
+                <button type="button" className="btn" onClick={reset}>Reset</button>
                 <button type="button" className="btn" onClick={decrease}>Decrement</button>
             </div>
         </div>
@@ -36,17 +36,16 @@ function mapDispatchToProps(dispatch, ownProps)
 {
     console.log(ownProps)
     return {
-        increase: () => dispatch({ type: INCREASE }),
-        decrease: () => dispatch({ type: DECREASE }),
-        reset: () => dispatch({ type: RESET }),
-        openModal: () => dispatch({
-            type: MODAL_OPEN,
-            payload: {
-                isOpen:true,
-                name: "Am a modal",
-                text:"Counter has been reset"
-        }
-        }),
+        increase: () => dispatch(increase()),
+        decrease: () => dispatch(decrease()),
+        reset: () =>
+        {
+            dispatch(reset());
+            dispatch(openModal(true,"Am a modal", "Counter has been reset"))
+        } ,
+      
+       
+      
         
     }
 }

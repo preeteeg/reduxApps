@@ -1,7 +1,7 @@
 import React from 'react'
 import {connect} from 'react-redux'
 import PropTypes from 'prop-types'
-import { MODAL_CLOSE } from '../store/actions'
+import { closeModal } from '../store/actions'
 import { MdClose } from 'react-icons/md';
 const Modal = ({ isOpen, name, text ,closeModal}) =>
 {
@@ -21,7 +21,7 @@ const Modal = ({ isOpen, name, text ,closeModal}) =>
 Modal.propTypes = {
     isOpen: PropTypes.bool.isRequired,
     text: PropTypes.string.isRequired,
-    close:PropTypes.func.isRequired,
+    closeModal:PropTypes.func.isRequired,
 }
 
 function mapStateToProps({ modalState: { isOpen,name, text } })
@@ -36,13 +36,7 @@ function mapStateToProps({ modalState: { isOpen,name, text } })
 function mapDispatchToProps(dispatch, ownProps)
 {
     return {
-        closeModal: () => dispatch({
-            type: MODAL_CLOSE,
-            payload: {
-                isOpen:false,
-                name: "",
-                text:""
-        }})
+        closeModal: () => dispatch(closeModal(false,"",""))
     }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(Modal)
