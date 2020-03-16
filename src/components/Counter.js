@@ -14,15 +14,16 @@ const Counter = (props) =>
     const { count, name, increase, decrease, reset ,openModal} = props
 
     return (
-        <div className="container">
-           <h1>{name}</h1>
+        <section className="section">
+            <h2 className="section-title">{name}</h2>
+       
             <p className="counter">{count}</p> 
             <div className="buttons">
                 <button type="button" className="btn" onClick={increase}>Increment</button>
                 <button type="button" className="btn" onClick={reset}>Reset</button>
                 <button type="button" className="btn" onClick={decrease}>Decrement</button>
             </div>
-        </div>
+             </section>
     )
 }
 
